@@ -1,10 +1,10 @@
 # Microbial Chemoresistance Knowledgebase (MiCK)
 
-MiCK is a knowledgebase of microbial gene sequences associated with chemoresistance in cancer. It houses ~1.6 million microbial gene sequences spanning 29 gene types linked to chemoresistance and drug metabolism, curated from recent literature and databases.
+MiCK is a knowledge base of microbial gene sequences associated with chemoresistance in cancer. It houses ~1.6 million microbial gene sequences spanning 29 gene types linked to chemoresistance and drug metabolism, curated from recent literature and databases.
 
 Chemoresistance is a major cause of cancer treatment failure, and the gut microbiome can modulate how well chemotherapeutic drugs work. MiCK gives researchers and healthcare professionals a single place to look up the microbial genes involved, the drugs they act on, and their effect on treatment.
 
-**Live site:** <https://my-app-khaki-theta.vercel.app/>
+**Live site:** <[https://my-app-khaki-theta.vercel.app/](https://mick-lilac.vercel.app)>
 
 ## What you can do
 
