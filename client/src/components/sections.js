@@ -10,9 +10,24 @@ export const sections = [
     { id: 'team', label: 'Team' },
 ];
 
-export function scrollToSection(id) {
+// Paths of the old multi-page site, mapped to the section that replaced each page.
+const legacyPaths = {
+    '/search': 'search',
+    '/downloads': 'downloads',
+    '/stats': 'statistics',
+    '/highlights': 'highlights',
+    '/faq': 'faq',
+    '/about': 'about',
+    '/team': 'team',
+};
+
+export function scrollToSection(id, behavior = 'smooth') {
     const element = document.getElementById(id);
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior, block: 'start' });
     }
+}
+
+export function sectionForPath(pathname) {
+    return legacyPaths[pathname.replace(/\/+$/, '').toLowerCase()];
 }
