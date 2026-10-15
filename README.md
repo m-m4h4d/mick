@@ -4,11 +4,11 @@ MiCK is a knowledge base of microbial gene sequences associated with chemoresist
 
 Chemoresistance is a major cause of cancer treatment failure, and the gut microbiome can modulate how well chemotherapeutic drugs work. MiCK gives researchers and healthcare professionals a single place to look up the microbial genes involved, the drugs they act on, and their effect on treatment.
 
-**Live site:** <[https://my-app-khaki-theta.vercel.app/](https://mick-lilac.vercel.app)>
+**Live site:** [https://my-app-khaki-theta.vercel.app/](https://mick-lilac.vercel.app)
 
 ## What you can do
 
-- **Search** the database by drug (5-FU, Capecitabine, Gemcitabine, Irinotecan, Oxaliplatin), by effect (e.g. chemoresistance, chemosensitivity, drug metabolism) or by gene type, or run a keyword search across all fields.
+- **Search** the database by drug (5-FU, Capecitabine, Gemcitabine, Irinotecan, Oxaliplatin), by effect (e.g., chemoresistance, chemosensitivity, drug metabolism) or by gene type, or run a keyword search across all fields.
 - **Download** the sequence database clustered at different identity thresholds, plus a metadata table of genes, drugs and effects.
 - **Browse** key statistics, highlights and FAQs about the knowledgebase.
 
@@ -37,7 +37,7 @@ client/
 
 The site is a React single-page app built with [Create React App](https://create-react-app.dev/) and [MUI](https://mui.com/). Search runs entirely in the browser against `src/data/mick.json`; there is no backend.
 
-The search data currently contains 26 representative records (accession, gene type, drug, full gene name, original UniProt accession and effect), not the full sequence collection. Searching the full ~1.6 million sequences would need a backend or search service rather than a bundled JSON file.
+The search data currently contains 26 representative records (accession, gene type, drug, full gene name, original UniProt accession, and effect), not the full sequence collection. Searching the full ~1.6 million sequences would need a backend or search service rather than a bundled JSON file.
 
 ## Running locally
 
