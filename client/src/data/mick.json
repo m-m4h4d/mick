@@ -1,0 +1,210 @@
+[
+  {
+    "AccessionNo": "CE_Uniprot42",
+    "Type": "CE",
+    "Drug": "Capecitabine",
+    "FullName": "carboxyl esterase",
+    "Original_Accession": ">tr|A0A1S5QM34|A0A1S5QM34_9BACT",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "DHP_Uniprot21",
+    "Type": "DHP",
+    "Drug": "Capecitabine",
+    "FullName": "dihydropyrimidinase",
+    "Original_Accession": ">tr|A0A081KFG8|A0A081KFG8_9GAMM",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "UMP_CMP_Uniprot18",
+    "Type": "UMP",
+    "Drug": "Capecitabine",
+    "FullName": "UMP-CMP kinase",
+    "Original_Accession": ">tr|A0A2N6GBW6|A0A2N6GBW6_9GAMM",
+    "Effect": "Chemosensitivity"
+  },
+  {
+    "AccessionNo": "BUP_Uniprot23",
+    "Type": "BUP",
+    "Drug": "Capecitabine",
+    "FullName": "Beta-ureidopropionase",
+    "Original_Accession": ">tr|A0A380BWH6|A0A380BWH6_9STAP",
+    "Effect": "Drug metabolism"
+  },
+  {
+    "AccessionNo": "UK_Uniprot46",
+    "Type": "UK",
+    "Drug": "Capecitabine",
+    "FullName": "Uridine kinase",
+    "Original_Accession": ">tr|A0A066UPK3|A0A066UPK3_9VIBR",
+    "Effect": "Substrate metabolism"
+  },
+  {
+    "AccessionNo": "PRT_Uniprot76",
+    "Type": "PRT",
+    "Drug": "5-FU",
+    "FullName": "uracil phosphoribosyltransferase",
+    "Original_Accession": ">tr|A0A0A3A1T9|A0A0A3A1T9_9PAST",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "CD_Uniprot20",
+    "Type": "CD",
+    "Drug": "Gemcitabine",
+    "FullName": "cytidine deaminase",
+    "Original_Accession": ">tr|A0A0S4QFT0|A0A0S4QFT0_9ACTN",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "RNR_Uniprot106",
+    "Type": "RNR",
+    "Drug": "Gemcitabine",
+    "FullName": "Ribonucleotide reductase",
+    "Original_Accession": ">tr|A0A045JP72|A0A045JP72_MYCTX",
+    "Effect": "Substrate metabolism"
+  },
+  {
+    "AccessionNo": "BGU_Uniprot1444",
+    "Type": "BGU",
+    "Drug": "Irinotecan",
+    "FullName": "beta-glucuronidase",
+    "Original_Accession": ">sp|Q1G9Z4|BGAL_LACDA",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "GUST_Uniprot5",
+    "Type": "GUST",
+    "Drug": "Irinotecan",
+    "FullName": "glucuronosyltransferase",
+    "Original_Accession": ">sp|A4F7P3|ERYC3_SACEN",
+    "Effect": "Chemoresistance/Chemosensitivity"
+  },
+  {
+    "AccessionNo": "DTI_Uniprot144",
+    "Type": "DTI",
+    "Drug": "Irinotecan",
+    "FullName": "DNA-Topoisomerase",
+    "Original_Accession": ">tr|A0A034T6J9|A0A034T6J9_9GAMM",
+    "Effect": "Cofactor"
+  },
+  {
+    "AccessionNo": "BUTY_Uniprot24",
+    "Type": "BUTY",
+    "Drug": "Oxaliplatin",
+    "FullName": "Butyrate",
+    "Original_Accession": ">sp|P50457|PUUE_ECOLI",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "HOG_Uniprot184",
+    "Type": "HOG",
+    "Drug": "Irinotecan",
+    "FullName": "hydroxyglutarate",
+    "Original_Accession": ">tr|A0A2P5GNM2|A0A2P5GNM2_9ENTR",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "HDA_Uniprot9",
+    "Type": "HDA",
+    "Drug": "Gemcitabine",
+    "FullName": "Histone deacetylase",
+    "Original_Accession": ">sp|Q9HXM1|HDAH_PSEAE",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "CDS_Uniprot10",
+    "Type": "CDS",
+    "Drug": "Gemcitabine",
+    "FullName": "cysteine_desulfurase",
+    "Original_Accession": ">sp|P27838|CYAY_ECOLI",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "DOC_Uniprot1605",
+    "Type": "DOC",
+    "Drug": "Gemcitabine",
+    "FullName": "deoxycytidine kinase",
+    "Original_Accession": ">tr|T5HI74|T5HI74_BACLI",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "DUTP_Uniprot24",
+    "Type": "DUTP",
+    "Drug": "Capecitabine",
+    "FullName": "dUTP diphosphatase",
+    "Original_Accession": ">tr|A0A0E1CFE3|A0A0E1CFE3_KLEPN",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "GLU_Uniprot65",
+    "Type": "GLU",
+    "Drug": "Oxaliplatin",
+    "FullName": "glutathione",
+    "Original_Accession": ">sp|P75849|GLO22_ECOLI",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "GST_Uniprot99",
+    "Type": "GST",
+    "Drug": "Oxaliplatin",
+    "FullName": "glutathione S-transferase",
+    "Original_Accession": ">tr|A0A060LUZ8|A0A060LUZ8_9BACI",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "MET_Uniprot10",
+    "Type": "MET",
+    "Drug": "Oxaliplatin",
+    "FullName": "metallothionein",
+    "Original_Accession": ">tr|A0A011PDN5|A0A011PDN5_9PROT",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "NDK_Uniprot198",
+    "Type": "NDK",
+    "Drug": "Capecitabine",
+    "FullName": "Nucleoside diphosphate kinase",
+    "Original_Accession": ">tr|A0A011TX52|A0A011TX52_9HYPH",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "PNP_Uniprot26",
+    "Type": "PNP",
+    "Drug": "Gemcitabine",
+    "FullName": "Purine nucleoside phosphorylase",
+    "Original_Accession": ">tr|A0A011NKP9|A0A011NKP9_9PROT",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "TK_Uniprot29",
+    "Type": "TK",
+    "Drug": "Gemcitabine",
+    "FullName": "Thymidine kinase",
+    "Original_Accession": ">tr|A0A069JZ53|A0A069JZ53_9ACTN",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "TP_Uniprot70",
+    "Type": "TP",
+    "Drug": "Capecitabine",
+    "FullName": "thymidine phosphorylase",
+    "Original_Accession": ">tr|A0A066RX48|A0A066RX48_9GAMM",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "TS_Uniprot35",
+    "Type": "TS",
+    "Drug": "5-FU",
+    "FullName": "Thymidylate synthase",
+    "Original_Accession": ">tr|A0A011QFW1|A0A011QFW1_9PROT",
+    "Effect": "Chemoresistance"
+  },
+  {
+    "AccessionNo": "UP_Uniprot79",
+    "Type": "UP",
+    "Drug": "Capecitabine",
+    "FullName": "uridine phosphorylase",
+    "Original_Accession": ">tr|A0A366DTN5|A0A366DTN5_9HYPH",
+    "Effect": "Chemoresistance"
+  }
+]
