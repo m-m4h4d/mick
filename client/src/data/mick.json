@@ -21,7 +21,7 @@
     "Drug": "Capecitabine",
     "FullName": "UMP-CMP kinase",
     "Original_Accession": ">tr|A0A2N6GBW6|A0A2N6GBW6_9GAMM",
-    "Effect": "Chemosenstivity"
+    "Effect": "Chemosensitivity"
   },
   {
     "AccessionNo": "BUP_Uniprot23",
@@ -42,7 +42,7 @@
   {
     "AccessionNo": "PRT_Uniprot76",
     "Type": "PRT",
-    "Drug": "FU",
+    "Drug": "5-FU",
     "FullName": "uracil phosphoribosyltransferase",
     "Original_Accession": ">tr|A0A0A3A1T9|A0A0A3A1T9_9PAST",
     "Effect": "Chemoresistance"
@@ -50,7 +50,7 @@
   {
     "AccessionNo": "CD_Uniprot20",
     "Type": "CD",
-    "Drug": "Gemictabine",
+    "Drug": "Gemcitabine",
     "FullName": "cytidine deaminase",
     "Original_Accession": ">tr|A0A0S4QFT0|A0A0S4QFT0_9ACTN",
     "Effect": "Chemoresistance"
@@ -58,10 +58,10 @@
   {
     "AccessionNo": "RNR_Uniprot106",
     "Type": "RNR",
-    "Drug": "Gemictabine",
+    "Drug": "Gemcitabine",
     "FullName": "Ribonucleotide reductase",
     "Original_Accession": ">tr|A0A045JP72|A0A045JP72_MYCTX",
-    "Effect": "substrate metabolism"
+    "Effect": "Substrate metabolism"
   },
   {
     "AccessionNo": "BGU_Uniprot1444",
@@ -77,7 +77,7 @@
     "Drug": "Irinotecan",
     "FullName": "glucuronosyltransferase",
     "Original_Accession": ">sp|A4F7P3|ERYC3_SACEN",
-    "Effect": "Chmoresistance/chemosenstivity"
+    "Effect": "Chemoresistance/Chemosensitivity"
   },
   {
     "AccessionNo": "DTI_Uniprot144",
@@ -85,7 +85,7 @@
     "Drug": "Irinotecan",
     "FullName": "DNA-Topoisomerase",
     "Original_Accession": ">tr|A0A034T6J9|A0A034T6J9_9GAMM",
-    "Effect": "cofactor"
+    "Effect": "Cofactor"
   },
   {
     "AccessionNo": "BUTY_Uniprot24",
@@ -114,7 +114,7 @@
   {
     "AccessionNo": "CDS_Uniprot10",
     "Type": "CDS",
-    "Drug": "Gemictabine",
+    "Drug": "Gemcitabine",
     "FullName": "cysteine_desulfurase",
     "Original_Accession": ">sp|P27838|CYAY_ECOLI",
     "Effect": "Chemoresistance"
@@ -122,7 +122,7 @@
   {
     "AccessionNo": "DOC_Uniprot1605",
     "Type": "DOC",
-    "Drug": "Gemictabine",
+    "Drug": "Gemcitabine",
     "FullName": "deoxycytidine kinase",
     "Original_Accession": ">tr|T5HI74|T5HI74_BACLI",
     "Effect": "Chemoresistance"
@@ -133,7 +133,7 @@
     "Drug": "Capecitabine",
     "FullName": "dUTP diphosphatase",
     "Original_Accession": ">tr|A0A0E1CFE3|A0A0E1CFE3_KLEPN",
-    "Effect": "chemoresistance"
+    "Effect": "Chemoresistance"
   },
   {
     "AccessionNo": "GLU_Uniprot65",
@@ -141,7 +141,7 @@
     "Drug": "Oxaliplatin",
     "FullName": "glutathione",
     "Original_Accession": ">sp|P75849|GLO22_ECOLI",
-    "Effect": "chemoresistance"
+    "Effect": "Chemoresistance"
   },
   {
     "AccessionNo": "GST_Uniprot99",
@@ -157,7 +157,7 @@
     "Drug": "Oxaliplatin",
     "FullName": "metallothionein",
     "Original_Accession": ">tr|A0A011PDN5|A0A011PDN5_9PROT",
-    "Effect": "chemoresistance"
+    "Effect": "Chemoresistance"
   },
   {
     "AccessionNo": "NDK_Uniprot198",
@@ -170,18 +170,18 @@
   {
     "AccessionNo": "PNP_Uniprot26",
     "Type": "PNP",
-    "Drug": "Gemictabine",
+    "Drug": "Gemcitabine",
     "FullName": "Purine nucleoside phosphorylase",
     "Original_Accession": ">tr|A0A011NKP9|A0A011NKP9_9PROT",
-    "Effect": "chemoresistance"
+    "Effect": "Chemoresistance"
   },
   {
     "AccessionNo": "TK_Uniprot29",
     "Type": "TK",
-    "Drug": "Gemictabine",
+    "Drug": "Gemcitabine",
     "FullName": "Thymidine kinase",
     "Original_Accession": ">tr|A0A069JZ53|A0A069JZ53_9ACTN",
-    "Effect": "chemoresistance"
+    "Effect": "Chemoresistance"
   },
   {
     "AccessionNo": "TP_Uniprot70",
@@ -194,7 +194,7 @@
   {
     "AccessionNo": "TS_Uniprot35",
     "Type": "TS",
-    "Drug": "FU",
+    "Drug": "5-FU",
     "FullName": "Thymidylate synthase",
     "Original_Accession": ">tr|A0A011QFW1|A0A011QFW1_9PROT",
     "Effect": "Chemoresistance"
