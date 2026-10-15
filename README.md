@@ -53,3 +53,7 @@ npm run build    # production build in client/build
 ## Deployment
 
 The site is deployed on Vercel with `client` as the project's root directory. Pushes to `master` deploy to production, and pull requests get preview deployments.
+
+## License
+
+Released under the [MIT License](LICENSE).
