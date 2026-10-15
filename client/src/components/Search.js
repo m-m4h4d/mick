@@ -1,8 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button, Container, Stack, TextField, Typography, Menu, MenuItem, styled, TableContainer, Paper, Table, TableCell, TableHead, TableRow, TableFooter, TablePagination, useTheme, IconButton, TableBody, alpha, CircularProgress } from '@mui/material';
+import { Box, Button, Container, Stack, TextField, Typography, Menu, MenuItem, styled, TableContainer, Paper, Table, TableCell, TableHead, TableRow, TableFooter, TablePagination, useTheme, IconButton, TableBody, alpha } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowLeft, KeyboardArrowRight, FirstPage, LastPage, KeyboardArrowUp } from '@mui/icons-material';
-import axios from 'axios';
+import database from '../data/mick.json';
 
 function TablePaginationActions(props) {
     const theme = useTheme();
@@ -107,16 +107,21 @@ const drugs = [
     { name: 'Gene Type' }
 ];
 
+const fieldsByCriteria = {
+    'Drug': ['Drug'],
+    'Effect': ['Effect'],
+    'Gene Type': ['Type'],
+};
+const anyFields = ['Drug', 'Effect', 'Type', 'AccessionNo'];
+
 export default function Search() {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [args, setArgs] = React.useState([]);
+    const [args, setArgs] = React.useState('');
     const [selectedDrug, setSelectedDrug] = React.useState('Any');
     const [searchResults, setSearchResults] = React.useState([]);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    const [totalCount, setTotalCount] = React.useState(0);
-    const [loading, setLoading] = React.useState(false);
-    const [smallLoading, setSmallLoading] = React.useState(false);
+    const [hasSearched, setHasSearched] = React.useState(false);
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -135,92 +140,27 @@ export default function Search() {
         setAnchorEl(null);
     };
 
-    const handleSearch = async () => {
-        const drugQuery = selectedDrug !== 'Any' ? selectedDrug : '';
-        const keywords = args ? args : '';
-        const page = 0;
-        const limit = rowsPerPage;
+    const handleSearch = () => {
+        const keywords = args.trim().toLowerCase();
+        const fields = fieldsByCriteria[selectedDrug] || anyFields;
 
-        setLoading(true);
-
-        await axios.get('http://localhost:5000/search', {
-            params: {
-                q: drugQuery,
-                keywords: keywords,
-                page: page,
-                limit: limit
-            }
-        })
-            .then(response => {
-                setSearchResults(response.data.data);
-                setPage(response.data.page);
-                setRowsPerPage(response.data.limit);
-                setTotalCount(response.data.totalCount);
-            })
-            .catch(error => {
-                console.error('There was an error searching the data!', error);
-            })
-            .finally(() => {
-                setLoading(false)
-            });
+        setSearchResults(database.filter((row) =>
+            fields.some((field) => row[field].toLowerCase().includes(keywords))
+        ));
+        setPage(0);
+        setHasSearched(true);
     };
 
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - searchResults.length) : 0;
 
-    const handleChangePage = async (event, newPage) => {
+    const handleChangePage = (event, newPage) => {
         setPage(newPage);
-        const drugQuery = selectedDrug !== 'Any' ? selectedDrug : '';
-        const keywords = args ? args : '';
-        const limit = rowsPerPage;
-
-        setSmallLoading(true);
-
-        await axios.get('http://localhost:5000/search', {
-            params: {
-                q: drugQuery,
-                keywords: keywords,
-                page: newPage,
-                limit: limit
-            }
-        })
-            .then(response => {
-                setSearchResults(response.data.data);
-            })
-            .catch(error => {
-                console.error('There was an error searching the data!', error);
-            })
-            .finally(() => {
-                setSmallLoading(false)
-            });
     };
 
-    const handleChangeRowsPerPage = async (event) => {
-        const newLimit = parseInt(event.target.value, 10);
-        const drugQuery = selectedDrug !== 'Any' ? selectedDrug : '';
-        const keywords = args ? args : '';
-
-        setLoading(true);
-        setRowsPerPage(newLimit);
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
-
-        await axios.get('http://localhost:5000/search', {
-            params: {
-                q: drugQuery,
-                keywords: keywords,
-                page: 0,
-                limit: newLimit
-            }
-        })
-            .then(response => {
-                setSearchResults(response.data.data);
-            })
-            .catch(error => {
-                console.error('There was an error searching the data!', error);
-            })
-            .finally(() => {
-                setLoading(false)
-            });
     };
 
     return (
@@ -296,6 +236,9 @@ export default function Search() {
                             placeholder="Type Keywords like 5-FU, Irinotecan, Capecitabine, Gemcitabine, or Oxaliplatin..."
                             value={args}
                             onChange={(event) => setArgs(event.target.value)}
+                            onKeyDown={(event) => {
+                                if (event.key === 'Enter') handleSearch();
+                            }}
                             inputProps={{
                                 autoComplete: 'on',
                                 'aria-label': 'Type Keywords like 5-FU, Irinotecan, Capecitabine, Gemcitabine, or Oxaliplatin...',
@@ -327,8 +270,12 @@ export default function Search() {
                                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
                     })}
                 >
-                    {loading && <CircularProgress style={{ marginBottom: '1rem', marginTop: '1rem' }} />}
-                    {!loading && searchResults.length > 0 && (
+                    {hasSearched && searchResults.length === 0 && (
+                        <Typography variant="body1" color="text.secondary" sx={{ py: 3 }}>
+                            No entries match your search.
+                        </Typography>
+                    )}
+                    {searchResults.length > 0 && (
                         <TableContainer component={Paper}>
                             <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
                                 <TableHead>
@@ -360,13 +307,11 @@ export default function Search() {
                                 </TableBody>
                                 <TableFooter>
                                     <TableRow style={{ height: '3rem' }}>
-                                        <TableCell align='right' style={{ margin: 0, padding: 0 }}>
-                                            {smallLoading && <CircularProgress size='2rem' />}
-                                        </TableCell>
+                                        <TableCell align='right' style={{ margin: 0, padding: 0 }} />
                                         <TablePagination
                                             rowsPerPageOptions={[5, 10, 20, 50]}
                                             colSpan={5}
-                                            count={totalCount}
+                                            count={searchResults.length}
                                             rowsPerPage={rowsPerPage}
                                             page={page}
                                             slotProps={{

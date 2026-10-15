@@ -10,22 +10,26 @@ const tiers = [
     {
         title: 'MiCK-75',
         description: 'Download database clustered at 75% identity',
-        file: 'File_2.faa'
+        file: 'File_2.faa',
+        unavailable: true,
     },
     {
         title: 'MiCK-80',
         description: 'Download database clustered at 80% identity',
-        file: 'File_3.faa'
+        file: 'File_3.faa',
+        unavailable: true,
     },
     {
         title: 'MiCK-90',
         description: 'Download database clustered at 90% identity',
-        file: 'File_4.faa'
+        file: 'File_4.faa',
+        unavailable: true,
     },
     {
         title: 'MiCK-100',
         description: 'Download database clustered at 100% identity',
-        file: 'File_5.faa'
+        file: 'File_5.faa',
+        unavailable: true,
     },
     {
         title: 'Metadata',
@@ -129,10 +133,11 @@ export default function Downloads() {
                                     fullWidth
                                     variant={hoveredCard === index ? "contained" : "outlined"}
                                     component="a"
-                                    href={`../static/assets/${tier.file}`}
+                                    href={`/downloads/${tier.file}`}
                                     download
+                                    disabled={tier.unavailable}
                                 >
-                                    Download
+                                    {tier.unavailable ? 'Coming soon' : 'Download'}
                                 </Button>
                             </CardActions>
                         </Card>
