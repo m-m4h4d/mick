@@ -1,86 +1,55 @@
 # Microbial Chemoresistance Knowledgebase (MiCK)
 
-## **Landing page template** Usage
+MiCK is a knowledgebase of microbial gene sequences associated with chemoresistance in cancer. It houses ~1.6 million microbial gene sequences spanning 29 gene types linked to chemoresistance and drug metabolism, curated from recent literature and databases.
 
-<!-- #default-branch-switch -->
+Chemoresistance is a major cause of cancer treatment failure, and the gut microbiome can modulate how well chemotherapeutic drugs work. MiCK gives researchers and healthcare professionals a single place to look up the microbial genes involved, the drugs they act on, and their effect on treatment.
 
-1. Copy the files into your project, or one of the [example projects](https://github.com/mui/material-ui/tree/master/examples).
-2. Make sure your project has the required dependencies: @mui/material, @mui/icons-material, @emotion/styled, @emotion/react.
-3. Import and use the `LandingPage` component.
+**Live site:** <https://my-app-khaki-theta.vercel.app/>
 
-## Demo
+## What you can do
 
-<!-- #default-branch-switch -->
+- **Search** the database by drug (5-FU, Capecitabine, Gemcitabine, Irinotecan, Oxaliplatin), by effect (e.g. chemoresistance, chemosensitivity, drug metabolism) or by gene type, or run a keyword search across all fields.
+- **Download** the sequence database clustered at different identity thresholds, plus a metadata table of genes, drugs and effects.
+- **Browse** key statistics, highlights and FAQs about the knowledgebase.
 
-View the demo at <https://mui.com/material-ui/getting-started/templates/landing-page/>.
+## Downloads
 
-## Getting Started with Create React App
+| Dataset | Contents | File |
+| :--- | :--- | :--- |
+| MiCK-50 | Sequences clustered at 50% identity | `File_1.faa` |
+| MiCK-75 | Sequences clustered at 75% identity | Coming soon |
+| MiCK-80 | Sequences clustered at 80% identity | Coming soon |
+| MiCK-90 | Sequences clustered at 90% identity | Coming soon |
+| MiCK-100 | Sequences clustered at 100% identity | Coming soon |
+| Metadata | Gene, drug, CRG, effect and bacterial species | `File_6.xlsx` |
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Download files live in `client/public/downloads/` and are served at `/downloads/<file>`. To publish a "Coming soon" dataset, add its file there and remove `unavailable: true` from its entry in `client/src/components/Downloads.js`.
 
-## Available Scripts
+## Project structure
 
-In the project directory, you can run:
+```
+client/
+  public/downloads/       Downloadable datasets (FASTA and metadata)
+  src/data/mick.json      Records searched on the Search page
+  src/components/         Page components (Hero, Search, Downloads, Statistics, FAQ, ...)
+  src/LandingPage.js      Routes and theme (light/dark mode)
+```
 
-### `npm start`
+The site is a React single-page app built with [Create React App](https://create-react-app.dev/) and [MUI](https://mui.com/). Search runs entirely in the browser against `src/data/mick.json`; there is no backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The search data currently contains 26 representative records (accession, gene type, drug, full gene name, original UniProt accession and effect), not the full sequence collection. Searching the full ~1.6 million sequences would need a backend or search service rather than a bundled JSON file.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running locally
 
-### `npm test`
+Requires Node.js 18 or later.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd client
+npm install
+npm start        # dev server at http://localhost:3000
+npm run build    # production build in client/build
+```
 
-### `npm run build`
+## Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The site is deployed on Vercel with `client` as the project's root directory. Pushes to `master` deploy to production, and pull requests get preview deployments.
