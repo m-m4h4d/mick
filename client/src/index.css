@@ -11,3 +11,11 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
+html {
+    scroll-behavior: smooth;
+}
+
+/* Keep section headings clear of the fixed navbar when scrolled into view */
+#hero, #statistics, #highlights, #search, #downloads, #faq, #about, #team {
+    scroll-margin-top: 72px;
+}

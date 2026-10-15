@@ -4,7 +4,7 @@ import { Box, AppBar, Toolbar, Button, Container, Divider, Typography, MenuItem,
 import { Menu } from '@mui/icons-material';
 import { ToggleColorMode } from './';
 import { ll, dl } from '../images';
-import { Link } from 'react-router-dom';
+import { sections, scrollToSection } from './sections';
 
 const logoStyle = {
     width: '50px',
@@ -20,6 +20,11 @@ function Navbar({ mode, toggleColorMode }) {
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
+    };
+
+    const handleDrawerClick = (id) => () => {
+        setOpen(false);
+        scrollToSection(id);
     };
 
     return (
@@ -68,71 +73,26 @@ function Navbar({ mode, toggleColorMode }) {
                         >
                             {theme.palette.mode === 'light' ? (
                                 <>
-                                    <img src={ll} alt="Hero" style={logoStyle} />
+                                    <img src={ll} alt="Hero" style={logoStyle} onClick={() => scrollToSection('hero')} />
                                 </>
                             ) : (
                                 <>
-                                    <img src={dl} alt="Hero" style={logoStyle} />
+                                    <img src={dl} alt="Hero" style={logoStyle} onClick={() => scrollToSection('hero')} />
                                 </>
                             )}
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                                 <Divider orientation="vertical" flexItem sx={{ mx: 2 }} />
-                                <MenuItem
-                                    component={Link} to="/" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Home
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    component={Link} to="/stats" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Statistics
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    component={Link} to="/highlights" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Highlights
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    component={Link} to="/search" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Search
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    component={Link} to="/downloads" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Downloads
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    component={Link} to="/faq" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        FAQs
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    component={Link} to="/about" underline="none"
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        About Us
-                                    </Typography>
-                                </MenuItem>
+                                {sections.map(({ id, label }) => (
+                                    <MenuItem
+                                        key={id}
+                                        onClick={() => scrollToSection(id)}
+                                        sx={{ py: '6px', px: '12px' }}
+                                    >
+                                        <Typography variant="body2" color="text.primary">
+                                            {label}
+                                        </Typography>
+                                    </MenuItem>
+                                ))}
                             </Box>
                         </Box>
                         <Box
@@ -176,27 +136,11 @@ function Navbar({ mode, toggleColorMode }) {
                                     <br />
                                     <Divider />
                                     <br />
-                                    <MenuItem component={Link} to="/" underline="none">
-                                        Home
-                                    </MenuItem>
-                                    <MenuItem component={Link} to="/stats" underline="none">
-                                        Statistics
-                                    </MenuItem>
-                                    <MenuItem component={Link} to="/highlights" underline="none">
-                                        Highlights
-                                    </MenuItem>
-                                    <MenuItem component={Link} to="/search" underline="none">
-                                        Search
-                                    </MenuItem>
-                                    <MenuItem component={Link} to="/downloads" underline="none">
-                                        Downloads
-                                    </MenuItem>
-                                    <MenuItem component={Link} to="/faq" underline="none">
-                                        FAQs
-                                    </MenuItem>
-                                    <MenuItem component={Link} to="/about" underline="none">
-                                        About Us
-                                    </MenuItem>
+                                    {sections.map(({ id, label }) => (
+                                        <MenuItem key={id} onClick={handleDrawerClick(id)}>
+                                            {label}
+                                        </MenuItem>
+                                    ))}
                                 </Box>
                             </Drawer>
                         </Box>

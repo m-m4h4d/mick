@@ -177,7 +177,7 @@ export default function Search() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    pt: { xs: 14, sm: 20 },
+                    pt: { xs: 4, sm: 12 },
                     pb: { xs: 8, sm: 12 },
                 }}
             >

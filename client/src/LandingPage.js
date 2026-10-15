@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline, Divider } from '@mui/material';
-import { Navbar, Hero, Statistics, Downloads, Search, FAQ, Footer, About, Highlights } from './components';
+import { Navbar, Hero, Statistics, Downloads, Search, FAQ, Footer, About, Highlights, Team } from './components';
 import getLPTheme from './getLPTheme';
 
 export default function LandingPage() {
@@ -13,22 +12,26 @@ export default function LandingPage() {
     };
 
     return (
-        <Router>
-            <ThemeProvider theme={LPtheme}>
-                <CssBaseline />
-                <Navbar mode={mode} toggleColorMode={toggleColorMode} />
-                <Routes>
-                    <Route path="/" element={<Hero />} />
-                    <Route path="/search" element={<Search />} />
-                    <Route path="/downloads" element={<Downloads />} />
-                    <Route path="/stats" element={<Statistics />} />
-                    <Route path="/highlights" element={<Highlights />} />
-                    <Route path="/faq" element={<FAQ />} />
-                    <Route path="/about" element={<About />} />
-                </Routes>
-                <Divider />
-                <Footer />
-            </ThemeProvider>
-        </Router>
+        <ThemeProvider theme={LPtheme}>
+            <CssBaseline />
+            <Navbar mode={mode} toggleColorMode={toggleColorMode} />
+            <Hero />
+            <Divider />
+            <Statistics />
+            <Divider />
+            <Highlights />
+            <Divider />
+            <Search />
+            <Divider />
+            <Downloads />
+            <Divider />
+            <FAQ />
+            <Divider />
+            <About />
+            <Divider />
+            <Team />
+            <Divider />
+            <Footer />
+        </ThemeProvider>
     );
 }
