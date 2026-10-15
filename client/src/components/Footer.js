@@ -82,6 +82,9 @@ export default function Footer() {
                         mt: 8
                     }}
                 >
+                    <MuiLink color="text.secondary" sx={{ cursor: 'pointer' }} onClick={() => scrollToSection('hero')}>
+                        Home
+                    </MuiLink>
                     <MuiLink color="text.secondary" sx={{ cursor: 'pointer' }} onClick={() => scrollToSection('faq')}>
                         FAQs
                     </MuiLink>
