@@ -6,6 +6,7 @@ import Highlights from "./Highlights";
 import ToggleColorMode from "./ToggleColorMode";
 import Statistics from "./Statistics";
 import About from "./About";
+import Team from "./Team";
 import Downloads from "./Downloads";
 import Search from "./Search";
 
@@ -18,6 +19,7 @@ export {
     ToggleColorMode,
     Statistics,
     About,
+    Team,
     Downloads,
     Search
 };
