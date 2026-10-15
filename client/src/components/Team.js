@@ -7,13 +7,13 @@ const members = [
         avatar: Author,
         name: 'Muhammad Shahzaib',
         occupation: 'Author',
-        email: "kshahzaib9937 (at) gmail.com"
+        email: "kshahzaib9937@gmail.com"
     },
     {
         avatar: Principal,
         name: 'Dr. Masood Ur Rehman Kayani',
         occupation: 'Principal Investigator',
-        email: "m.kayani (at) sines.nust.edu.pk"
+        email: "m.kayani@sines.nust.edu.pk"
     },
     {
         avatar: Husnain,
@@ -22,8 +22,9 @@ const members = [
     },
     {
         avatar: Download,
-        name: 'Dr. Farzana Jabeen',
-        occupation: 'Lead Web Developer'
+        name: 'Muhammad Mahad',
+        occupation: 'Lead Web Developer',
+        email: "mahadbinashfaq@gmail.com"
     },
 ];
 
